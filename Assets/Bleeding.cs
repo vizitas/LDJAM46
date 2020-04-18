@@ -29,8 +29,6 @@ public class Bleeding : MonoBehaviour
         {
             bleeding = true;
             Particles.Play();
-            //var emission = Particles.emission;
-            //emission.enabled = true;
             bleedingStart = Time.time;
         }
     }
@@ -61,8 +59,6 @@ public class Bleeding : MonoBehaviour
             {
                 bleeding = false;
                 Particles.Stop();
-                //var emission = Particles.emission;
-                //emission.enabled = false;
                 Medkits--;
             }
         }
