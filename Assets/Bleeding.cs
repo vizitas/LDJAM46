@@ -28,8 +28,9 @@ public class Bleeding : MonoBehaviour
         if(!bleeding && Random.Range(0, 100) <= Probability)
         {
             bleeding = true;
-            var emission = Particles.emission;
-            emission.enabled = true;
+            Particles.Play();
+            //var emission = Particles.emission;
+            //emission.enabled = true;
             bleedingStart = Time.time;
         }
     }
@@ -59,8 +60,9 @@ public class Bleeding : MonoBehaviour
             if (healing && Time.time - healingStart > healTime)
             {
                 bleeding = false;
-                var emission = Particles.emission;
-                emission.enabled = false;
+                Particles.Stop();
+                //var emission = Particles.emission;
+                //emission.enabled = false;
                 Medkits--;
             }
         }
