@@ -6,6 +6,8 @@ public class CameraFollower : MonoBehaviour
 {
     public Transform player;
     private Transform CameraTransform;
+    public float xOffset = 0;
+    public float zOffset = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +17,6 @@ public class CameraFollower : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CameraTransform.position = new Vector3(player.position.x, CameraTransform.position.y, player.position.z);
+        CameraTransform.position = new Vector3(player.position.x + xOffset, CameraTransform.position.y, player.position.z + zOffset);
     }
 }
