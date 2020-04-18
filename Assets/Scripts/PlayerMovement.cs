@@ -18,44 +18,49 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+
+            
         float rotation = 0;
         bool forwardBackward = false;
         bool moved = false;
-        if (Input.GetKey(KeyCode.W))
+        if (!Input.GetKey(KeyCode.F))
         {
-            characterController.Move(new Vector3(speed, 0,0));
-            rotation = 0;
-            moved = true;
-        }
+            if (Input.GetKey(KeyCode.W))
+            {
+                characterController.Move(new Vector3(speed, 0, 0));
+                rotation = 0;
+                moved = true;
+            }
 
-        if (Input.GetKey(KeyCode.S))
-        {
-            characterController.Move(new Vector3(-1*speed, 0,0));
-            rotation = -180;
-            moved = true;
-        }
+            if (Input.GetKey(KeyCode.S))
+            {
+                characterController.Move(new Vector3(-1 * speed, 0, 0));
+                rotation = -180;
+                moved = true;
+            }
 
-        if (Input.GetKey(KeyCode.A))
-        {
-            characterController.Move(new Vector3(0, 0, speed));
-            rotation =  -90;
-            moved = true;
-        }
+            if (Input.GetKey(KeyCode.A))
+            {
+                characterController.Move(new Vector3(0, 0, speed));
+                rotation = -90;
+                moved = true;
+            }
 
-        if (Input.GetKey(KeyCode.D))
-        {
-            characterController.Move(new Vector3(0, 0, -1 * speed));
-            rotation =  90;
-            moved = true;
+            if (Input.GetKey(KeyCode.D))
+            {
+                characterController.Move(new Vector3(0, 0, -1 * speed));
+                rotation = 90;
+                moved = true;
+            }
+            if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.A))
+                rotation = -45;
+            if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.D))
+                rotation = 45;
+            if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.A))
+                rotation = -135;
+            if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.D))
+                rotation = 135;
         }
-        if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.A))
-            rotation = -45;
-        if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.D))
-            rotation = 45;
-        if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.A))
-            rotation = -135;
-        if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.D))
-            rotation = 135;
         if (moved)
         {
             playerAnimator.SetBool("IsRunning", true);
