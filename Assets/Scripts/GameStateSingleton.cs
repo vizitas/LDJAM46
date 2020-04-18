@@ -9,14 +9,15 @@ public class GameStateSingleton : MonoBehaviour
     private static GameStateSingleton instance;
     public static GameStateSingleton Instance
     {
-        get{
+        get
+        {
             if (instance == null)
                 instance = new GameStateSingleton();
             return instance;
         }
     }
 
-            private GameStateSingleton()
+    private GameStateSingleton()
     {
 
     }
