@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <created>2020-04-18T21:57:36Z</created>
+    <modified>2020-04-18T21:57:36Z</modified>
+    <revision>1.0</revision>
+  </asset>
+  <library_images>
+    <image id="sand_1-diffuse-tex" name="sand_1-diffuse-tex">
+      <init_from>sand_1_diffuse.png</init_from>
+    </image>
+    <image id="sand_1-emissive-tex" name="sand_1-emissive-tex">
+      <init_from>sand_1_emissive.png</init_from>
+    </image>
+  </library_images>
+  <library_effects>
+    <effect id="sand_1-Effect">
+      <profile_COMMON>
+        <newparam sid="sand_1-diffuse-surface">
+          <surface type="2D">
+            <init_from>sand_1-diffuse-tex</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="sand_1-emissive-surface">
+          <surface type="2D">
+            <init_from>sand_1-emissive-tex</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="sand_1-diffuse-sampler">
+          <sampler2D>
+            <source>sand_1-diffuse-surface</source>
+            <wrap_s>CLAMP</wrap_s>
+            <wrap_t>CLAMP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+          </sampler2D>
+        </newparam>
+        <newparam sid="sand_1-emissive-sampler">
+          <sampler2D>
+            <source>sand_1-emissive-surface</source>
+            <wrap_s>CLAMP</wrap_s>
+            <wrap_t>CLAMP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="phong1">
+          <phong>
+            <emission>
+              <texture texcoord="sand_1-tex-bind" texture="sand_1-emissive-sampler"/>
+            </emission>
+            <ambient>
+              <color>1.0 1.0 1.0 1.0</color>
+            </ambient>
+            <diffuse>
+              <texture texcoord="sand_1-tex-bind" texture="sand_1-diffuse-sampler"/>
+            </diffuse>
+            <specular>
+              <color>0.0 0.0 0.0 1.0</color>
+            </specular>
+            <shininess>
+              <float>5.0</float>
+            </shininess>
+            <reflective>
+              <color>1.0 1.0 1.0 1.0</color>
+            </reflective>
+            <reflectivity>
+              <float>0.2</float>
+            </reflectivity>
+            <transparent>
+              <color>1.0 1.0 1.0 1.0</color>
+            </transparent>
+            <transparency>
+              <float>1.0</float>
+            </transparency>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_materials>
+    <material id="sand_1-Material">
+      <instance_effect url="#sand_1-Effect"/>
+    </material>
+  </library_materials>
+  <library_geometries>
+    <geometry id="sand_1-Geom" name="sand_1-Geom">
+      <mesh>
+        <source id="sand_1-Pos">
+          <float_array count="72" id="sand_1-Pos-array">-32.0 -0.5 32.0 -32.0 0.5 32.0 -32.0 0.5 -32.0 -32.0 -0.5 -32.0 32.0 -0.5 -32.0 32.0 0.5 -32.0 32.0 0.5 32.0 32.0 -0.5 32.0 -32.0 -0.5 -32.0 32.0 -0.5 -32.0 32.0 -0.5 32.0 -32.0 -0.5 32.0 -32.0 0.5 32.0 32.0 0.5 32.0 32.0 0.5 -32.0 -32.0 0.5 -32.0 -32.0 0.5 -32.0 32.0 0.5 -32.0 32.0 -0.5 -32.0 -32.0 -0.5 -32.0 -32.0 -0.5 32.0 32.0 -0.5 32.0 32.0 0.5 32.0 -32.0 0.5 32.0 </float_array>
+          <technique_common>
+            <accessor count="24" source="#sand_1-Pos-array" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="sand_1-UV">
+          <float_array count="48" id="sand_1-UV-array">0.0 0.5 0.0078125 0.5 0.0078125 1.0 0.0 1.0 0.0078125 1.0 0.015625 1.0 0.015625 0.5 0.0078125 0.5 0.5 1.0 1.0 1.0 1.0 0.5 0.5 0.5 0.0 0.0 0.5 0.0 0.5 0.5 0.0 0.5 0.5703125 0.5 0.5703125 1.0 0.5625 1.0 0.5625 0.5 0.5625 0.5 0.5625 1.0 0.5703125 1.0 0.5703125 0.5 </float_array>
+          <technique_common>
+            <accessor count="24" source="#sand_1-UV-array" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="sand_1-Normal">
+          <float_array count="18" id="sand_1-Normal-array">-1.0 0.0 0.0 1.0 0.0 0.0 0.0 -1.0 0.0 0.0 1.0 0.0 0.0 0.0 -1.0 0.0 0.0 1.0</float_array>
+          <technique_common>
+            <accessor count="6" source="#sand_1-Normal-array" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="sand_1-Vertices">
+          <input semantic="POSITION" source="#sand_1-Pos"/>
+        </vertices>
+        <polylist count="6" material="sand_1-Material">
+          <input offset="0" semantic="VERTEX" source="#sand_1-Vertices"/>
+          <input offset="1" semantic="TEXCOORD" set="0" source="#sand_1-UV"/>
+          <input offset="2" semantic="NORMAL" source="#sand_1-Normal"/>
+          <vcount>4 4 4 4 4 4 </vcount>
+          <p>0 0 0 1 1 0 2 2 0 3 3 0 4 4 1 5 5 1 6 6 1 7 7 1 8 8 2 9 9 2 10 10 2 11 11 2 12 12 3 13 13 3 14 14 3 15 15 3 16 16 4 17 17 4 18 18 4 19 19 4 20 20 5 21 21 5 22 22 5 23 23 5 </p>
+        </polylist>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_animations/>
+  <library_visual_scenes>
+    <visual_scene id="DefaultScene">
+      <node id="Root-global" name="Root-global" sid="Root-global">
+        <matrix sid="matrix">1.0 0.0 -8.742278E-8 0.0 0.0 1.0 0.0 0.0 -8.742278E-8 0.0 -1.0 0.0 0.0 0.0 0.0 1.0 </matrix>
+        <node id="sand_1-global" name="sand_1-global" sid="sand_1-global">
+          <matrix sid="matrix">1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 </matrix>
+          <node id="sand_1-local" name="sand_1-local" sid="sand_1-local">
+            <matrix sid="matrix">1.0 0.0 0.0 8.0 0.0 1.0 0.0 -0.5 0.0 0.0 1.0 11.0 0.0 0.0 0.0 1.0 </matrix>
+            <instance_geometry url="#sand_1-Geom">
+              <bind_material>
+                <technique_common>
+                  <instance_material symbol="sand_1-Material" target="#sand_1-Material">
+                    <bind_vertex_input input_semantic="TEXCOORD" input_set="0" semantic="sand_1-tex-bind"/>
+                  </instance_material>
+                </technique_common>
+              </bind_material>
+            </instance_geometry>
+          </node>
+        </node>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#DefaultScene"/>
+  </scene>
+</COLLADA>
