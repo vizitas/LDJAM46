@@ -48,11 +48,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerTransform: {fileID: 0}
   bullet: {fileID: 6973774335309996131, guid: bfcec302d8acfc546bbd3284ddb62fad, type: 3}
-  variance: 5
-  gunSpeed: 0.06
-  magazineSize: 20
+  variance: 4
+  gunSpeed: 0.04
+  magazineSize: 30
   reloadTime: 3
-  bulletSpeed: 12
+  bulletSpeed: 6
 --- !u!65 &1590496594389224490
 BoxCollider:
   m_ObjectHideFlags: 0

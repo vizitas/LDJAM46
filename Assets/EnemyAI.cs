@@ -12,7 +12,6 @@ public class EnemyAI : MonoBehaviour
         firing = GetComponent<Firing>();
     }
 
-    // Update is called once per frame
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Player")

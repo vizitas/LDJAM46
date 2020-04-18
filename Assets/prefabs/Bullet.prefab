@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 5144833067734090133}
   m_Layer: 0
   m_Name: Bullet
-  m_TagString: Untagged
+  m_TagString: bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -96,7 +96,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 2
+  m_CollisionDetection: 1
 --- !u!135 &5198722364717552416
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -108,8 +108,8 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 2.5721207
+  m_Center: {x: 0.13052374, y: 0, z: -0.0943321}
 --- !u!96 &5144833067734090133
 TrailRenderer:
   serializedVersion: 2

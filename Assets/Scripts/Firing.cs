@@ -19,6 +19,7 @@ public class Firing : MonoBehaviour
     {
         InvokeRepeating("FireMagazine", 0, reloadTime);
     }
+
     void FireMagazine()
     {
         for(int n = 0; n< magazineSize; n++)
@@ -26,6 +27,7 @@ public class Firing : MonoBehaviour
             Invoke("Fire", n* gunSpeed);
         }
     }
+
     // Update is called once per frame
     void Fire()
     {
@@ -33,7 +35,7 @@ public class Firing : MonoBehaviour
         instance.transform.position = transform.position;
         var body = instance.GetComponent<Rigidbody>();
         var target = new Vector3( PlayerTransform.position.x + Random.Range(-1*variance,variance),
-            PlayerTransform.position.y + Random.Range(-1 * variance, variance),
+            PlayerTransform.position.y + Random.Range(-1 * variance/2, variance/2),
             PlayerTransform.position.z + Random.Range(-1 * variance, variance)
             );
 
