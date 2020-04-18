@@ -43,11 +43,11 @@ public class Bleeding : MonoBehaviour
             {
                 GameStateSingleton.Instance.Death();
             }
-            if (Input.GetKeyDown(KeyCode.F))
+            if (Medkits > 0 && Input.GetKeyDown(KeyCode.F))
             {
                 healingStart = Time.time;
             }
-            if (Input.GetKey(KeyCode.F))
+            if (Medkits > 0 && Input.GetKey(KeyCode.F))
             {
                 healing = true;
             }
@@ -61,7 +61,16 @@ public class Bleeding : MonoBehaviour
                 bleeding = false;
                 var emission = Particles.emission;
                 emission.enabled = false;
+                Medkits--;
             }
+        }
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "medkit")
+        {
+            Medkits++;
+            Destroy(other.gameObject);
         }
     }
 }
