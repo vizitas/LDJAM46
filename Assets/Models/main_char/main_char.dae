@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
   <asset>
-    <created>2020-04-18T11:50:06Z</created>
-    <modified>2020-04-18T11:50:06Z</modified>
+    <created>2020-04-18T12:12:39Z</created>
+    <modified>2020-04-18T12:12:39Z</modified>
     <revision>1.0</revision>
   </asset>
   <library_images>
@@ -130,7 +130,76 @@
       </mesh>
     </geometry>
   </library_geometries>
-  <library_animations/>
+  <library_animations>
+    <animation id="main_char-global-anim" name="main_char-global-anim">
+      <animation>
+        <source id="main_char-global-anim-inSource-TIME">
+          <float_array count="10" id="main_char-global-anim-inSource-TIME-array">0.0 0.041666668 0.083333336 0.125 0.16666667 0.20833333 0.25 0.29166666 0.33333334 0.375 </float_array>
+          <technique_common>
+            <accessor count="10" source="#main_char-global-anim-inSource-TIME-array">
+              <param name="TIME" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="main_char-global-anim-interpolation">
+          <Name_array count="10" id="main_char-global-anim-interpolation-array">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR </Name_array>
+          <technique_common>
+            <accessor count="10" source="#main_char-global-anim-interpolation-array">
+              <param type="name"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="main_char-global-anim-outSource-global">
+          <float_array count="160" id="main_char-global-anim-outSource-global-array">1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 </float_array>
+          <technique_common>
+            <accessor count="10" source="#main_char-global-anim-outSource-global-array" stride="16">
+              <param type="float4x4"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <sampler id="main_char-global-anim-globalSampler">
+          <input semantic="INPUT" source="#main_char-global-anim-inSource-TIME"/>
+          <input semantic="OUTPUT" source="#main_char-global-anim-outSource-global"/>
+          <input semantic="INTERPOLATION" source="#main_char-global-anim-interpolation"/>
+        </sampler>
+        <channel source="#main_char-global-anim-globalSampler" target="main_char-global/matrix"/>
+      </animation>
+    </animation>
+    <animation id="main_char-local-anim" name="main_char-local-anim">
+      <animation>
+        <source id="main_char-local-anim-inSource-TIME">
+          <float_array count="10" id="main_char-local-anim-inSource-TIME-array">0.0 0.041666668 0.083333336 0.125 0.16666667 0.20833333 0.25 0.29166666 0.33333334 0.375 </float_array>
+          <technique_common>
+            <accessor count="10" source="#main_char-local-anim-inSource-TIME-array">
+              <param name="TIME" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="main_char-local-anim-interpolation">
+          <Name_array count="10" id="main_char-local-anim-interpolation-array">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR </Name_array>
+          <technique_common>
+            <accessor count="10" source="#main_char-local-anim-interpolation-array">
+              <param type="name"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="main_char-local-anim-outSource-local">
+          <float_array count="160" id="main_char-local-anim-outSource-local-array">1.0 0.0 0.0 -0.49999952 0.0 1.0 0.0 0.0 0.0 0.0 1.0 6.000004 0.0 0.0 0.0 1.0 1.0 0.0 0.0 -0.43539196 0.0 1.0 0.0 0.0 0.0 0.0 1.0 5.333336 0.0 0.0 0.0 1.0 1.0 0.0 0.0 -0.3707844 0.0 1.0 0.0 0.0 0.0 0.0 1.0 4.6666718 0.0 0.0 0.0 1.0 1.0 0.0 0.0 -0.3061768 0.0 1.0 0.0 0.0 0.0 0.0 1.0 4.000004 0.0 0.0 0.0 1.0 1.0 0.0 0.0 -0.24156925 0.0 1.0 0.0 0.0 0.0 0.0 1.0 3.3333359 0.0 0.0 0.0 1.0 1.0 0.0 0.0 -0.17696166 0.0 1.0 0.0 0.0 0.0 0.0 1.0 2.6666718 0.0 0.0 0.0 1.0 1.0 0.0 0.0 -0.1123541 0.0 1.0 0.0 0.0 0.0 0.0 1.0 2.0000038 0.0 0.0 0.0 1.0 1.0 0.0 0.0 -0.04774654 0.0 1.0 0.0 0.0 0.0 0.0 1.0 1.3333359 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.016861022 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.66667175 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.08146858 0.0 1.0 0.0 0.0 0.0 0.0 1.0 3.8146973E-6 0.0 0.0 0.0 1.0 </float_array>
+          <technique_common>
+            <accessor count="10" source="#main_char-local-anim-outSource-local-array" stride="16">
+              <param type="float4x4"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <sampler id="main_char-local-anim-localSampler">
+          <input semantic="INPUT" source="#main_char-local-anim-inSource-TIME"/>
+          <input semantic="OUTPUT" source="#main_char-local-anim-outSource-local"/>
+          <input semantic="INTERPOLATION" source="#main_char-local-anim-interpolation"/>
+        </sampler>
+        <channel source="#main_char-local-anim-localSampler" target="main_char-local/matrix"/>
+      </animation>
+    </animation>
+  </library_animations>
   <library_visual_scenes>
     <visual_scene id="DefaultScene">
       <node id="Root-global" name="Root-global" sid="Root-global">
@@ -138,7 +207,7 @@
         <node id="main_char-global" name="main_char-global" sid="main_char-global">
           <matrix sid="matrix">1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 </matrix>
           <node id="main_char-local" name="main_char-local" sid="main_char-local">
-            <matrix sid="matrix">1.0 0.0 0.0 -0.49999952 0.0 1.0 0.0 36.0 0.0 0.0 1.0 42.000004 0.0 0.0 0.0 1.0 </matrix>
+            <matrix sid="matrix">1.0 0.0 0.0 0.08146858 0.0 1.0 0.0 0.0 0.0 0.0 1.0 3.8146973E-6 0.0 0.0 0.0 1.0 </matrix>
             <instance_geometry url="#main_char-Geom">
               <bind_material>
                 <technique_common>
