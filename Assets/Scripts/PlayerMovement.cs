@@ -57,6 +57,7 @@ public class PlayerMovement : MonoBehaviour
         if (moved)
         playerTransform.rotation = Quaternion.Euler( new Vector3(playerTransform.rotation.eulerAngles.x, rotation, playerTransform.rotation.eulerAngles.z));
 
-
+        if (Input.GetKeyDown(KeyCode.Escape))
+            GameStateSingleton.Instance.Death();
     }
 }
