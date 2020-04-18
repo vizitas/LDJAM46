@@ -30,9 +30,17 @@ public class Bleeding : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(Time.time - bleedingStart > 10)
+        if (bleeding)
         {
-            GameStateSingleton.Instance.Death();
+            if (Time.time - bleedingStart > 10)
+            {
+                GameStateSingleton.Instance.Death();
+            }
+            if (Input.GetKey(KeyCode.F))
+            {
+                bleeding = false;
+                Particles.SetActive(false);
+            }
         }
     }
 }
