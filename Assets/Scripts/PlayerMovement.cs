@@ -8,10 +8,12 @@ public class PlayerMovement : MonoBehaviour
 
     CharacterController characterController;
     Transform playerTransform;
+    public Animator playerAnimator;
     void Start()
     {
         characterController = GetComponent<CharacterController>();
         playerTransform = GetComponent<Transform>();
+
     }
 
     void FixedUpdate()
@@ -55,7 +57,14 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.D))
             rotation = 135;
         if (moved)
-        playerTransform.rotation = Quaternion.Euler( new Vector3(playerTransform.rotation.eulerAngles.x, rotation, playerTransform.rotation.eulerAngles.z));
+        {
+            playerAnimator.SetBool("IsRunning", true);
+            playerTransform.rotation = Quaternion.Euler(new Vector3(playerTransform.rotation.eulerAngles.x, rotation, playerTransform.rotation.eulerAngles.z));
+        }
+        else
+        {
+            playerAnimator.SetBool("IsRunning", false);
+        }
 
         if (Input.GetKeyDown(KeyCode.Escape))
             GameStateSingleton.Instance.Death();
