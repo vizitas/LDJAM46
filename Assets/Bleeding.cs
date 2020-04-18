@@ -42,12 +42,12 @@ public class Bleeding : MonoBehaviour
             {
                 GameStateSingleton.Instance.Death();
             }
-            if (Medkits > 0 && Input.GetKeyDown(KeyCode.F))
-            {
-                healingStart = Time.time;
-            }
             if (Medkits > 0 && Input.GetKey(KeyCode.F))
             {
+                if (!healing)
+                {
+                    healingStart = Time.time;
+                }
                 healing = true;
             }
             else
