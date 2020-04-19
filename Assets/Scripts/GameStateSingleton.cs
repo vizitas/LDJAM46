@@ -3,26 +3,44 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameStateSingleton : MonoBehaviour
+public class GameStateSingleton : Singleton<GameStateSingleton>
 {
-    //#todo states
-    private static GameStateSingleton instance;
-    public static GameStateSingleton Instance
+    public enum GameStates
     {
-        get
-        {
-            if (instance == null)
-                instance = new GameStateSingleton();
-            return instance;
-        }
+        MENU,
+        PLAYING,
+        DEATH
     }
 
-    private GameStateSingleton()
-    {
+    public GameStates GameState = GameStates.MENU;
 
+    public void ChangeGameState(GameStates state)
+    {
+        GameState = state;
     }
+
     public void Death()
     {
+        Debug.Log("DEATH");
+        GameState = GameStates.DEATH;
+        Invoke("Restart", 3);
+    }
+
+    public void StartGame()
+    {
+        GameState = GameStates.PLAYING;
+        SceneManager.UnloadSceneAsync("Menu");
+        SceneManager.LoadScene("SampleScene");
+    }
+
+    public void Menu()
+    {
+        GameState = GameStates.MENU;
+    }
+
+    public void Restart()
+    {
+        SceneManager.UnloadSceneAsync("DeathScreen");
         SceneManager.LoadScene("SampleScene");
     }
 }
