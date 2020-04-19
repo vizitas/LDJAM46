@@ -30,6 +30,10 @@ public class Bleeding : MonoBehaviour
     {
         if(!bleeding && Random.Range(0, 100) <= Probability)
         {
+            var sources = GetComponents<AudioSource>();
+
+            sources[Random.Range(0, sources.Length - 1)].Play();
+
             bleeding = true;
             Particles.Play();
             bleedingStart = Time.time;
@@ -50,6 +54,9 @@ public class Bleeding : MonoBehaviour
             {
                 if (!healing)
                 {
+                    var sources = GetComponents<AudioSource>();
+
+                    sources[sources.Length - 1].Play();
                     healingStart = Time.time;
                 }
                 healing = true;
@@ -57,6 +64,9 @@ public class Bleeding : MonoBehaviour
             else
             {
                 healing = false;
+                var sources = GetComponents<AudioSource>();
+
+                sources[sources.Length - 1].Stop();
             }
 
             if (healing && Time.time - healingStart > healTime)
