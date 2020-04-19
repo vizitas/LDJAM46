@@ -13,11 +13,18 @@ public class ProgressBarScript : MonoBehaviour
 
     public RectTransform RectTransform;
 
+    public Bleeding Bleeding;
+
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Bleeding.healTime != -1)
         {
+            RectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, MaxWidth / 100 * Bleeding.HealingProgress);
+        } 
+        else
+        {
+            RectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 0);
         }
     }
 }

@@ -16,6 +16,9 @@ public class Bleeding : MonoBehaviour
     private float bleedingStart;
 
     public int Medkits = 0;
+
+    public float HealingProgress = 0f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -58,8 +61,14 @@ public class Bleeding : MonoBehaviour
             if (healing && Time.time - healingStart > healTime)
             {
                 bleeding = false;
+                healingStart = -1;
                 Particles.Stop();
                 Medkits--;
+            }
+
+            if (healing)
+            {
+                HealingProgress = ((Time.time - healingStart) / healTime) * 100;
             }
         }
     }
