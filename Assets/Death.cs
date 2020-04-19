@@ -5,6 +5,7 @@ using UnityEngine;
 public class Death : MonoBehaviour
 {
     public PlayerMovement Movement;
+    public Animator playerAnimator;
     // Start is called before the first frame 
     private void OnTriggerEnter(Collider other)
     {
@@ -16,6 +17,7 @@ public class Death : MonoBehaviour
 
     public void Die()
     {
+        playerAnimator.SetBool("Dead", true);
         Movement.enabled = false;
         Invoke("DelayedDeath", 3);
     }

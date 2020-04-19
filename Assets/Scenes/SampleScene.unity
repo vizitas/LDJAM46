@@ -1412,6 +1412,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95cb95af97e429f4ba9b3568e93484d7, type: 3}
+--- !u!95 &697176935 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5023780848035320312, guid: 1d79d6cfe6217e946b9a32364b5b6175,
+    type: 3}
+  m_PrefabInstance: {fileID: 5023780846264304560}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -4898,6 +4904,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5023780848134685376, guid: 1d79d6cfe6217e946b9a32364b5b6175,
+        type: 3}
+      propertyPath: playerAnimator
+      value: 
+      objectReference: {fileID: 697176935}
     - target: {fileID: 5023780846676309240, guid: 1d79d6cfe6217e946b9a32364b5b6175,
         type: 3}
       propertyPath: CollisionModule.plane0
