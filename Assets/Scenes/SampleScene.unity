@@ -1840,8 +1840,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1665978152}
   - component: {fileID: 1665978155}
-  - component: {fileID: 1665978154}
   - component: {fileID: 1665978153}
+  - component: {fileID: 1665978154}
   m_Layer: 5
   m_Name: MedkitInfo
   m_TagString: Untagged
@@ -1880,6 +1880,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21a547b2dfdc31046bbcf19c40a4a4db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  medkitText: {fileID: 1665978154}
+  bleeding: {fileID: 1887715699}
 --- !u!114 &1665978154
 MonoBehaviour:
   m_ObjectHideFlags: 0
