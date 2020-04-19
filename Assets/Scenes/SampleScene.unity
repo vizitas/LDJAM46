@@ -6961,6 +6961,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4229635951379170356, guid: 1a43b5914736861438c77813a77e9a7f,
+        type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a43b5914736861438c77813a77e9a7f, type: 3}
 --- !u!1001 &1590496595008658683
@@ -7104,11 +7109,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5023780846676309240, guid: 1d79d6cfe6217e946b9a32364b5b6175,
-        type: 3}
-      propertyPath: CollisionModule.plane0
-      value: 
-      objectReference: {fileID: 324954289}
     - target: {fileID: 5023780848134685376, guid: 1d79d6cfe6217e946b9a32364b5b6175,
         type: 3}
       propertyPath: playerAnimator
@@ -7129,6 +7129,11 @@ PrefabInstance:
       propertyPath: Grunt
       value: 
       objectReference: {fileID: 548564615}
+    - target: {fileID: 5023780846676309240, guid: 1d79d6cfe6217e946b9a32364b5b6175,
+        type: 3}
+      propertyPath: CollisionModule.plane0
+      value: 
+      objectReference: {fileID: 324954289}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d79d6cfe6217e946b9a32364b5b6175, type: 3}
 --- !u!1001 &6737052573912293183
