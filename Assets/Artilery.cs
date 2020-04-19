@@ -6,11 +6,12 @@ public class Artilery : MonoBehaviour
 {
     void Start()
     {
-        Invoke("disable", 0.5f);
+        Invoke("disable", 0.3f);
         Destroy(gameObject, 5);
     }
     private void disable()
     {
         GetComponent<Collider>().enabled = false;
+        GetComponent<Light>().enabled = false;
     }
 }
