@@ -44,7 +44,7 @@ public class Bleeding : MonoBehaviour
     float healingStart;
     private void FixedUpdate()
     {
-        if (bleeding)
+        if (bleeding && GameStateSingleton.Instance.GameState != GameStateSingleton.GameStates.DEATH)
         {
             if (Time.time - bleedingStart > bleedOutTime)
             {
@@ -77,6 +77,8 @@ public class Bleeding : MonoBehaviour
                 Medkits--;
                 HealingProgress = -1f;
                 healing = false;
+                var sources = GetComponents<AudioSource>();
+                sources[sources.Length - 1].Stop();
             }
 
             if (healing)

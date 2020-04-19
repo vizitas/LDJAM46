@@ -23,10 +23,13 @@ public class GameStateSingleton : Singleton<GameStateSingleton>
 
     public void Death()
     {
-        Debug.Log("DEATH");
-        GameState = GameStates.DEATH;
-        DeathTime = Time.time;
-        Invoke("LoadDeathScreen", 3);
+        if (GameState != GameStates.DEATH)
+        {
+            Debug.Log("DEATH");
+            GameState = GameStates.DEATH;
+            DeathTime = Time.time;
+            Invoke("LoadDeathScreen", 2);
+        }
     }
 
     private void LoadDeathScreen()
