@@ -12,8 +12,11 @@ public class Firing : MonoBehaviour
     public float magazineSize = 10;
     public float reloadTime = 3;
     public float bulletSpeed = 5;
+    AudioSource audio;
+
     void Start()
     {
+        audio = GetComponent<AudioSource>();
     }
     private void OnEnable()
     {
@@ -22,10 +25,12 @@ public class Firing : MonoBehaviour
 
     void FireMagazine()
     {
-        for(int n = 0; n< magazineSize; n++)
+        audio.Play();
+        for (int n = 0; n< magazineSize; n++)
         {
             Invoke("Fire", n* gunSpeed);
         }
+        Invoke("stopSound", magazineSize * gunSpeed);
     }
 
     // Update is called once per frame
@@ -41,5 +46,9 @@ public class Firing : MonoBehaviour
 
         body.velocity =  (target - transform.position)* bulletSpeed;
         Destroy(instance, 3);
+    }
+    void stopSound()
+    {
+        audio.Stop();
     }
 }

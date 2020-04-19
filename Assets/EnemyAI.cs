@@ -6,10 +6,12 @@ public class EnemyAI : MonoBehaviour
 {
     Collider trigger;
     Firing firing;
+    AudioSource audio;
         void Start()
     {
         trigger = GetComponent<Collider>();
         firing = GetComponent<Firing>();
+        audio = GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -25,6 +27,7 @@ public class EnemyAI : MonoBehaviour
         {
             firing.enabled = false;
             firing.CancelInvoke();
+            audio.Stop();
         }
     }
 }
