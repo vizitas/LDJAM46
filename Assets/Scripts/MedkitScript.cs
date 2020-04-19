@@ -3,11 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIScript : MonoBehaviour
+public class MedkitScript : MonoBehaviour
 {
-
-    private int medkitCount = 4;
-
     public Text medkitText;
 
     public Bleeding bleeding;
@@ -18,8 +15,8 @@ public class UIScript : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
-        medkitText.text = "Medkits available: " + bleeding.Medkits;
+        medkitText.text = ""+bleeding.Medkits;
     }
 }

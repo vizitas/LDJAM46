@@ -12,12 +12,12 @@ public class Bleeding : MonoBehaviour
     public float bleedOutTime = 10f;
     public float healTime = 3f;
 
-    private bool bleeding = false;
+    public bool bleeding = false;
     private float bleedingStart;
 
     public int Medkits = 0;
 
-    public float HealingProgress = 0f;
+    public float HealingProgress = -1f;
 
     // Start is called before the first frame update
     void Start()
@@ -33,9 +33,10 @@ public class Bleeding : MonoBehaviour
             bleeding = true;
             Particles.Play();
             bleedingStart = Time.time;
+            HealingProgress = 0;
         }
     }
-    bool healing = false;
+    public bool healing = false;
     float healingStart;
     private void FixedUpdate()
     {
@@ -64,6 +65,8 @@ public class Bleeding : MonoBehaviour
                 healingStart = -1;
                 Particles.Stop();
                 Medkits--;
+                HealingProgress = -1f;
+                healing = false;
             }
 
             if (healing)
