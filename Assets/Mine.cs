@@ -13,6 +13,7 @@ public class Mine : MonoBehaviour
             {
                 particle.Play();
             }
+            GetComponent<AudioSource>().Play();
             var deathController = other.GetComponent<Death>();
             deathController.Die();
         }
