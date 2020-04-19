@@ -14,6 +14,8 @@ public class GameStateSingleton : Singleton<GameStateSingleton>
 
     public GameStates GameState = GameStates.MENU;
 
+    public float DeathTime = -1f;
+
     public void ChangeGameState(GameStates state)
     {
         GameState = state;
@@ -23,13 +25,18 @@ public class GameStateSingleton : Singleton<GameStateSingleton>
     {
         Debug.Log("DEATH");
         GameState = GameStates.DEATH;
-        Invoke("Restart", 3);
+        DeathTime = Time.time;
+        Invoke("LoadDeathScreen", 3);
+    }
+
+    private void LoadDeathScreen()
+    {
+        SceneManager.LoadScene("DeathScreen");
     }
 
     public void StartGame()
     {
         GameState = GameStates.PLAYING;
-        SceneManager.UnloadSceneAsync("Menu");
         SceneManager.LoadScene("SampleScene");
     }
 
@@ -40,7 +47,6 @@ public class GameStateSingleton : Singleton<GameStateSingleton>
 
     public void Restart()
     {
-        SceneManager.UnloadSceneAsync("DeathScreen");
         SceneManager.LoadScene("SampleScene");
     }
 }

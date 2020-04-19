@@ -22,7 +22,7 @@ public class Death : MonoBehaviour
         Dead = true;
         playerAnimator.SetBool("Dead", true);
         Movement.enabled = false;
-        Invoke("DelayedDeath", 3);
+        Invoke("DelayedDeath", 2);
     }
 
     private void DelayedDeath()
