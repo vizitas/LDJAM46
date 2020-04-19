@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Death : MonoBehaviour
 {
+    public bool Dead;
+
     public PlayerMovement Movement;
     public Animator playerAnimator;
     // Start is called before the first frame 
@@ -17,14 +19,14 @@ public class Death : MonoBehaviour
 
     public void Die()
     {
+        Dead = true;
         playerAnimator.SetBool("Dead", true);
         Movement.enabled = false;
-        Invoke("DelayedDeath", 3);
+        Invoke("DelayedDeath", 2);
     }
 
     private void DelayedDeath()
     {
         GameStateSingleton.Instance.Death();
-
     }
 }
