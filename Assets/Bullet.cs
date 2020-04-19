@@ -7,9 +7,12 @@ public class Bullet : MonoBehaviour
     Rigidbody rigidbody;
     public float MinBulletSpeed = 30;
     public float currentSpeed;
+    public AudioSource audio;
+    public float AudioFrequency = 30;
     void Start()
     {
         rigidbody = GetComponent<Rigidbody>();
+        audio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -19,6 +22,13 @@ public class Bullet : MonoBehaviour
         if ( rigidbody.velocity.magnitude < MinBulletSpeed)
         {
             Destroy(gameObject);
+        }
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (Random.Range(0,100)<= AudioFrequency)
+        {
+            audio.Play();
         }
     }
 }
