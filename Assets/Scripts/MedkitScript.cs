@@ -17,6 +17,6 @@ public class MedkitScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        medkitText.text = "Medkits available: " + bleeding.Medkits;
+        medkitText.text = ""+bleeding.Medkits;
     }
 }
