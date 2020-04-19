@@ -35,7 +35,7 @@ public class Bleeding : MonoBehaviour
             bleedingStart = Time.time;
         }
     }
-    bool healing = false;
+    public bool healing = false;
     float healingStart;
     private void FixedUpdate()
     {
@@ -64,6 +64,8 @@ public class Bleeding : MonoBehaviour
                 healingStart = -1;
                 Particles.Stop();
                 Medkits--;
+                HealingProgress = 0;
+                healing = false;
             }
 
             if (healing)

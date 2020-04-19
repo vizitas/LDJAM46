@@ -1,30 +1,26 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ProgressBarScript : MonoBehaviour
 {
-
-    public float MaxWidth;
-
-    public float CurrentWidth;
-
-    public float Progress = 0;
-
-    public RectTransform RectTransform;
-
     public Bleeding Bleeding;
+
+    public Slider Slider;
 
     // Update is called once per frame
     void Update()
     {
-        if (Bleeding.healTime != -1)
+        if (Bleeding.healing)
         {
-            RectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, MaxWidth / 100 * Bleeding.HealingProgress);
+            Slider.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
+            Slider.value = Bleeding.HealingProgress / 100;
         } 
         else
         {
-            RectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 0);
+            Slider.GetComponent<RectTransform>().localScale = new Vector3(0, 0, 0);
+            Slider.value = 0;
         }
     }
 }
