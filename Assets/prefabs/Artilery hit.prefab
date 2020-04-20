@@ -5033,7 +5033,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 7.617385, y: 1.1105642, z: 9.098904}
+  m_Size: {x: 10, y: 1.1105642, z: 10}
   m_Center: {x: -0.16118765, y: 0.055282116, z: -0.31010604}
 --- !u!198 &2950934048296691746
 ParticleSystem:

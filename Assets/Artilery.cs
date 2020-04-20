@@ -6,9 +6,8 @@ public class Artilery : MonoBehaviour
 {
     void Start()
     {
-
         Invoke("explosion", 0.6f);
-        Invoke("disable",0.9f);
+        Invoke("disable",0.75f);
         Destroy(gameObject, 5);
     }
     private void disable()
@@ -24,6 +23,7 @@ public class Artilery : MonoBehaviour
         GetComponent<ParticleSystem>().Play();
 
     }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")

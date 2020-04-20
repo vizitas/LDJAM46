@@ -290,9 +290,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7ef4c73f42d3114c8e8598a626763f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MinBulletSpeed: 20
+  MinBulletSpeed: 25
   currentSpeed: 0
-  audio: {fileID: 0}
+  audio: {fileID: 6701902021545985761}
   AudioFrequency: 80
 --- !u!82 &6701902021545985761
 AudioSource:
