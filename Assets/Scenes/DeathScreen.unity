@@ -823,9 +823,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'You are dead.
-
-    your brother died too.'
+  m_Text: Game Over
 --- !u!222 &1811703343
 CanvasRenderer:
   m_ObjectHideFlags: 0
